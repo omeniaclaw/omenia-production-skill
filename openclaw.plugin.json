@@ -1,0 +1,22 @@
+{
+  "id": "omenia-production-skill",
+  "name": "Omenia Production Skill",
+  "version": "0.1.0",
+  "description": "Thin client for Omenia Production Graph tools. No backend logic or credentials included.",
+  "main": "index.js",
+  "config": {
+    "baseUrl": {
+      "type": "string",
+      "label": "Omenia base URL",
+      "default": "https://omenia.io"
+    }
+  },
+  "auth": {
+    "omenia": {
+      "type": "apiKey",
+      "label": "Omenia API key",
+      "header": "Authorization",
+      "prefix": "Bearer"
+    }
+  }
+}

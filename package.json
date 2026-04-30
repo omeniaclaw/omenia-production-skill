@@ -1,0 +1,44 @@
+{
+  "name": "@omenia/production-skill",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Commercial thin OpenClaw/Claude skill client for Omenia Production Graph. Backend logic stays private on Omenia.",
+  "main": "index.js",
+  "scripts": {
+    "self-test": "node tests/self-test.mjs",
+    "check": "node --check index.js && npm run self-test",
+    "publish:github": "bash ./publish-github.sh"
+  },
+  "files": [
+    "index.js",
+    "openclaw.plugin.json",
+    "skills/production/SKILL.md",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE.md",
+    "COMMERCIAL.md",
+    "PUBLISHING_CHECKLIST.md",
+    "GITHUB_RELEASE_NOTES_TEMPLATE.md",
+    "publish-github.sh",
+    "tests/self-test.mjs"
+  ],
+  "keywords": [
+    "omenia",
+    "openclaw",
+    "production-graph",
+    "skill"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omeniaclaw/omenia-production-skill.git"
+  },
+  "homepage": "https://github.com/omeniaclaw/omenia-production-skill",
+  "bugs": {
+    "url": "https://github.com/omeniaclaw/omenia-production-skill/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
