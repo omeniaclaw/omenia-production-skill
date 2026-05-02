@@ -22,6 +22,8 @@ fi
 cd "$ROOT_DIR"
 npm run check
 
+git_auth_header="$(printf 'x-access-token:%s' "$TOKEN" | base64 | tr -d '\n')"
+
 api_headers=(
 	-H "Authorization: Bearer $TOKEN"
 	-H "Accept: application/vnd.github+json"
@@ -84,8 +86,8 @@ if ! git rev-parse "$tag" >/dev/null 2>&1; then
 	git tag "$tag"
 fi
 
-git -c http.extraHeader="Authorization: Bearer $TOKEN" push -u origin main
-git -c http.extraHeader="Authorization: Bearer $TOKEN" push origin "$tag"
+git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $git_auth_header" push -u origin main
+git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $git_auth_header" push origin "$tag"
 
 echo "publish ok"
 echo "repo=https://github.com/$OWNER/$REPO"
