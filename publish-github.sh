@@ -6,6 +6,7 @@ OWNER="${GITHUB_OWNER:-omeniaclaw}"
 REPO="${GITHUB_REPO:-omenia-production-skill}"
 VISIBILITY="${GITHUB_VISIBILITY:-private}"
 TOKEN="${GITHUB_TOKEN:-}"
+USERNAME="${GITHUB_USERNAME:-$OWNER}"
 AUTHOR_NAME="${GIT_AUTHOR_NAME:-Omenia Publisher}"
 AUTHOR_EMAIL="${GIT_AUTHOR_EMAIL:-security@omenia.io}"
 
@@ -22,7 +23,7 @@ fi
 cd "$ROOT_DIR"
 npm run check
 
-git_auth_header="$(printf 'x-access-token:%s' "$TOKEN" | base64 | tr -d '\n')"
+git_auth_header="$(printf '%s:%s' "$USERNAME" "$TOKEN" | base64 | tr -d '\n')"
 
 api_headers=(
 	-H "Authorization: Bearer $TOKEN"
